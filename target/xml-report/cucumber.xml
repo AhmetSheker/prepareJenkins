@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="13.987">
+    <testcase classname="IMDB home page arrow test" name="User clicks arrows" time="13.82">
+        <system-out>
+            <![CDATA[Given user is on imdb home page.............................................passed
+And verifies imdb logo......................................................passed
+When user clicks right arrow button once....................................passed
+Then user clicks left arrow button twice....................................passed
+And user clicks the trailer.................................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>

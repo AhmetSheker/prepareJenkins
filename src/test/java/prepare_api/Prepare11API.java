@@ -35,16 +35,16 @@ public class Prepare11API extends PlaceHolder {
 
     @Test
     public void get03(){
-        spec.pathParams("1", "todos", "2", "23");
-        Response response = given().spec(spec).when().get("/{1}/{2}");
-        response.
-                then().
-                assertThat().
-                statusCode(200).
-                contentType("application/json").
-                body("title", equalTo("et itaque necessitatibus maxime molestiae qui quas velit")).
-                body("completed", equalTo(false)).
-                body("userId", equalTo(2));
+//         spec.pathParams("1", "todos", "2", "23");
+//         Response response = given().spec(spec).when().get("/{1}/{2}");
+//         response.
+//                 then().
+//                 assertThat().
+//                 statusCode(200).
+//                 contentType("application/json").
+//                 body("title", equalTo("et itaque necessitatibus maxime molestiae qui quas velit")).
+//                 body("completed", equalTo(false)).
+//                 body("userId", equalTo(2));
     }
 
     /*
@@ -68,15 +68,15 @@ public class Prepare11API extends PlaceHolder {
 
     @Test
     public void get04(){
-        spec.pathParams("1", "todos");
-        Response response = given().spec(spec).accept(ContentType.JSON).when().get("/{1}");
-        response.
-                then().
-                statusCode(200).
-                contentType("application/json").
-                body("id", hasSize(200)).
-                body("title", hasItem("quis eius est sint explicabo")).
-                body("userId", hasItems(2, 7, 9));
+//         spec.pathParams("1", "todos");
+//         Response response = given().spec(spec).accept(ContentType.JSON).when().get("/{1}");
+//         response.
+//                 then().
+//                 statusCode(200).
+//                 contentType("application/json").
+//                 body("id", hasSize(200)).
+//                 body("title", hasItem("quis eius est sint explicabo")).
+//                 body("userId", hasItems(2, 7, 9));
     }
 
     /*
@@ -96,16 +96,16 @@ public class Prepare11API extends PlaceHolder {
 
     @Test
     public void get07(){
-        spec.pathParam("1", "todos");
-        Response response = given().spec(spec).when().get("/{1}");
-        response.then().assertThat().statusCode(200);
-        JsonPath jsonPath = response.jsonPath();
-        List<Integer> ids = jsonPath.getList("findAll{it.id > 190}.id");
-        assertEquals(10, ids.size());
-        List<Integer> userIds = jsonPath.getList("findAll{it.userId < 5}.userId");
-        assertEquals(80, userIds.size());
-        List<String> titles = jsonPath.getList("findAll{it.id < 5}.title");
-        assertTrue(titles.contains("delectus aut autem"));
+//         spec.pathParam("1", "todos");
+//         Response response = given().spec(spec).when().get("/{1}");
+//         response.then().assertThat().statusCode(200);
+//         JsonPath jsonPath = response.jsonPath();
+//         List<Integer> ids = jsonPath.getList("findAll{it.id > 190}.id");
+//         assertEquals(10, ids.size());
+//         List<Integer> userIds = jsonPath.getList("findAll{it.userId < 5}.userId");
+//         assertEquals(80, userIds.size());
+//         List<String> titles = jsonPath.getList("findAll{it.id < 5}.title");
+//         assertTrue(titles.contains("delectus aut autem"));
     }
 
     /*
@@ -145,57 +145,57 @@ public class Prepare11API extends PlaceHolder {
 
     @Test
     public void get09(){
-        spec.pathParams("1", "todos", "2", "2");
-        Response response = given().spec(spec).accept(ContentType.JSON).when().get("/{1}/{2}");
-        response.
-                then().
-                assertThat().
-                statusCode(200).
-                body("completed", equalTo(false)).
-                body("userId", equalTo(1)).
-                body("title", equalTo("quis ut nam facilis et officia qui"));
+//         spec.pathParams("1", "todos", "2", "2");
+//         Response response = given().spec(spec).accept(ContentType.JSON).when().get("/{1}/{2}");
+//         response.
+//                 then().
+//                 assertThat().
+//                 statusCode(200).
+//                 body("completed", equalTo(false)).
+//                 body("userId", equalTo(1)).
+//                 body("title", equalTo("quis ut nam facilis et officia qui"));
 
-        assertEquals("1.1 vegur", response.getHeader("Via"));
-        assertEquals("cloudflare", response.getHeader("Server"));
+//         assertEquals("1.1 vegur", response.getHeader("Via"));
+//         assertEquals("cloudflare", response.getHeader("Server"));
     }
 
     @Test
     public void get10(){
-        spec.pathParams("1", "todos", "2", "2");
+//         spec.pathParams("1", "todos", "2", "2");
 
-        Map<String, Object> expected = new HashMap<>();
-        expected.put("userId", 1);
-        expected.put("title", "quis ut nam facilis et officia qui");
-        expected.put("completed", false);
-        expected.put("Via", "1.1 vegur");
-        expected.put("Server", "cloudflare");
-        expected.put("StatusCode", 200);
+//         Map<String, Object> expected = new HashMap<>();
+//         expected.put("userId", 1);
+//         expected.put("title", "quis ut nam facilis et officia qui");
+//         expected.put("completed", false);
+//         expected.put("Via", "1.1 vegur");
+//         expected.put("Server", "cloudflare");
+//         expected.put("StatusCode", 200);
 
-        Response response = given().spec(spec).when().get("/{1}/{2}");
-        response.prettyPrint();
-        Map<String, Object> actual = response.as(HashMap.class);
+//         Response response = given().spec(spec).when().get("/{1}/{2}");
+//         response.prettyPrint();
+//         Map<String, Object> actual = response.as(HashMap.class);
 
-        assertEquals(expected.get("userId"), actual.get("userId"));
-        assertEquals(expected.get("title"), actual.get("title"));
-        assertEquals(expected.get("completed"), actual.get("completed"));
-        assertEquals(expected.get("Via"), response.getHeader("Via"));
-        assertEquals(expected.get("Server"), response.getHeader("Server"));
-        assertEquals(expected.get("StatusCode"), response.getStatusCode());
+//         assertEquals(expected.get("userId"), actual.get("userId"));
+//         assertEquals(expected.get("title"), actual.get("title"));
+//         assertEquals(expected.get("completed"), actual.get("completed"));
+//         assertEquals(expected.get("Via"), response.getHeader("Via"));
+//         assertEquals(expected.get("Server"), response.getHeader("Server"));
+//         assertEquals(expected.get("StatusCode"), response.getStatusCode());
 
     }
 
     @Test
     public void get11(){
-        spec.pathParams("1", "todos", "2", "2");
+//         spec.pathParams("1", "todos", "2", "2");
 
-        PlaceHolderData placeHolderData = new PlaceHolderData();
-        Map<String, Object> expected = placeHolderData.testData(1, "quis ut nam facilis et officia qui", false);
+//         PlaceHolderData placeHolderData = new PlaceHolderData();
+//         Map<String, Object> expected = placeHolderData.testData(1, "quis ut nam facilis et officia qui", false);
 
-        Response response = given().spec(spec).when().get("/{1}/{2}");
-        Map<String, Object> actual = response.as(HashMap.class);
+//         Response response = given().spec(spec).when().get("/{1}/{2}");
+//         Map<String, Object> actual = response.as(HashMap.class);
 
-        assertEquals(expected.get("userId"), actual.get("userId"));
-        assertEquals(expected.get("title"), actual.get("title"));
-        assertEquals(expected.get("completed"), actual.get("completed"));
+//         assertEquals(expected.get("userId"), actual.get("userId"));
+//         assertEquals(expected.get("title"), actual.get("title"));
+//         assertEquals(expected.get("completed"), actual.get("completed"));
     }
 }
